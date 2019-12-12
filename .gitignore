@@ -1,3 +1,5 @@
+# Place where Data For Pose detection is stored
+data/
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
