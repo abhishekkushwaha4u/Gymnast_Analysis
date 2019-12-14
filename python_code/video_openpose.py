@@ -7,8 +7,6 @@ import random
 from python_code import *
 #from python_code import get_image_graph
 
-
-
 video_path = "data\\video\\vid_edit.mp4"
 protofile_path = "models\pose\mpi\pose_deploy_linevec_faster_4_stages.prototxt"          # Paste server path
 weights_path = "models\pose\mpi\pose_iter_160000.caffemodel"   # Paste server path
@@ -100,20 +98,27 @@ def get_video_fps(video_path):
 def adjust_video_fps(video_path, fps):
     cap = cv2.VideoCapture(video_path)
     frame_count = 0
-    # count = 0
-    while(cap.isOpened()):
+    point_ = []
+    count = 0
+    while(cap.isOpened() and count <1) :
         ret, frame = cap.read()
         frame_count +=1
         if(frame_count % int(fps) == 0):
             print("Reading per second %d"%(frame_count))
             frame = cv2.resize(frame, (368,368)) 
             ret, points = get_image_graph(protofile_path, weights_path, frame, nPoints, POSE_PAIRS)
-               
+            point_.append(points)
+            count += 1
+    return(point_)
+
     # return(frame)
 
 fps = get_video_fps(video_path)
 # print(fps)
-adjust_video_fps(video_path, fps)
+pt = adjust_video_fps(video_path, fps)
+print(pt)
+
+
 
 # Call the python_graph_pose for this frame
 
