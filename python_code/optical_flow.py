@@ -19,6 +19,13 @@ def get_optical_flow(video_path):
     old_gray = cv2.cvtColor(old_frame, cv2.COLOR_BGR2GRAY)
     old_points = cv2.goodFeaturesToTrack(old_gray, **feature_params)
 
+    while(1):
+        ret, frame = cap.read()
+        frame_gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
+        new_points, status, err = cv2.calcOpticalFlowPyrLK(old_gray, frame_gray, old_points, None, **lk_params)
+
+        good_new = new_points[status==1]
+
 
     # old_gray = 
 
