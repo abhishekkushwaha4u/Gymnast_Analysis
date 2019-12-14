@@ -14,5 +14,8 @@ for i in corners:
     cv2.circle(img2,(x,y),10,(255,0,0), 3)
 
 plt.imshow(img2[...,::-1])
+
+img2_rgb = cv2.cvtColor(img2, cv2.COLOR_GRAY2BGR)
+cv2.imwrite('stick_track.png',img2_rgb)
 plt.show()
 
