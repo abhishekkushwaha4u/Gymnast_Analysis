@@ -16,5 +16,8 @@ def angle(a, b, c):
     np.degrees(angle)
 
 
-#ef graph_generators()
+def graph_generators():
+    # To be completed
+    pass
+
 
