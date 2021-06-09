@@ -1,6 +1,6 @@
 asgiref==3.2.3
 decorator==4.4.1
-Django==2.2.21
+Django==2.2.22
 djangorestframework==3.11.0
 networkx==2.4
 numpy==1.17.4
