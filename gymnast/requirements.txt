@@ -3,7 +3,7 @@ decorator==4.4.1
 django>=2.2.13
 djangorestframework==3.11.2
 networkx==2.4
-numpy==1.17.4
+numpy==1.22.0
 pytz==2019.3
 redis==3.3.11
 sqlparse==0.3.0
